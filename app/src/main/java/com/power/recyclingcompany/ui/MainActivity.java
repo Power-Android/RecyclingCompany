@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.power.recyclingcompany.R;
 import com.power.recyclingcompany.base.BaseActivity;
+import com.power.recyclingcompany.ui.home.RecycleFBActivity;
 import com.power.recyclingcompany.ui.message.MessageActivity;
 import com.power.recyclingcompany.ui.person.PersonActivity;
 
@@ -77,6 +78,7 @@ public class MainActivity extends BaseActivity<MainContract, MainPresenter> impl
                 startActivity(new Intent(this,PersonActivity.class));
                 break;
             case R.id.hsryfb_tv:
+                startActivity(new Intent(this,RecycleFBActivity.class));
                 break;
             case R.id.hsrysq_tv:
                 break;

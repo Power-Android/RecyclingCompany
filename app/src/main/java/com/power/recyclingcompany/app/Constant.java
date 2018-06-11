@@ -1,7 +1,6 @@
 package com.power.recyclingcompany.app;
 
 import android.support.annotation.IntDef;
-
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
@@ -17,6 +16,10 @@ public class Constant {
      */
     public static final String SHARED_NAME = "mPreferences";
 
+    /**
+     * @description: 地图权限code
+     */
+    public static final int REQUEST_CODE_LOCATION = 101;
 
     /**
      * @description: 全局URL常量

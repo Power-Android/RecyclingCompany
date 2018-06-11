@@ -21,9 +21,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.power.recyclingcompany.R;
+import com.power.recyclingcompany.widget.BaseDialog;
 
 /**
  * 若把初始化内容放到initData实现,就是采用Lazy方式加载的Fragment
@@ -37,6 +42,8 @@ import android.view.ViewGroup;
 
 public abstract class BaseFragment<V, T extends BasePresenter<V>>  extends Fragment {
 
+    protected T mPresenter;
+
     protected String fragmentTitle;             //fragment标题
     private boolean isVisible;                  //是否可见状态
     private boolean isPrepared;                 //标志位，View已经初始化完成。
@@ -44,6 +51,8 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>>  extends Fragm
     protected LayoutInflater inflater;
     protected Context mContext;
     protected Activity mActivity;
+    private BaseDialog mDialog;
+    private BaseDialog.Builder mBuilder;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -60,7 +69,15 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>>  extends Fragm
         super.onCreate(savedInstanceState);
         mContext = getContext();//主要是方便子类调用
         mActivity = getActivity();
+
+        mPresenter = createPresenter();
+        if (mPresenter != null) {
+            mPresenter.attachView((V) this);//因为之后所有的子类都要实现对应的View接口
+        }
     }
+
+    //用于创建Presenter和判断是否使用MVP模式(由子类实现)
+    protected abstract T createPresenter();
 
     /** 如果是与ViewPager一起使用，调用的是setUserVisibleHint */
     @Override
@@ -106,9 +123,9 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>>  extends Fragm
         initLazyData();
     }
 
-    protected abstract View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
-
     protected abstract void initLazyData();
+
+    protected abstract View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
 
     public String getTitle() {
         return TextUtils.isEmpty(fragmentTitle) ? "" : fragmentTitle;
@@ -117,4 +134,46 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>>  extends Fragm
     public void setTitle(String title) {
         fragmentTitle = title;
     }
+
+    /**
+     * 显示等待提示框
+     */
+    public void showDialog() {
+        hideDialog();
+        mBuilder = new BaseDialog.Builder(mContext);
+        mDialog = mBuilder.setViewId(R.layout.layout_loading)
+                //设置dialogpadding
+                .setPaddingdp(0, 0, 0, 0)
+                //设置显示位置
+                .setGravity(Gravity.CENTER)
+                //设置动画
+                .setAnimation(R.style.nomal_aniamtion)
+                //设置dialog的宽高
+                .setWidthHeightpx(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                //设置触摸dialog外围是否关闭
+                .isOnTouchCanceled(false)
+                //设置监听事件
+                .builder();
+        mDialog.setCancelable(false);
+        mDialog.show();
+    }
+
+    /**
+     * 隐藏等待提示框
+     */
+    public void hideDialog() {
+        if (mDialog != null &&  mDialog.isShowing()) {
+            mDialog.dismiss();
+            mDialog = null;
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mPresenter != null) {
+            mPresenter.detachView();
+        }
+    }
+
 }

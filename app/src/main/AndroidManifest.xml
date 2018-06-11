@@ -2,23 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.power.recyclingcompany">
 
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RESTART_PACKAGES" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- 获取网络状态 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 获取wifi状态 -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <!-- 改变wifi状态 -->
     <uses-permission android:name="android.permission.READ_LOGS" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 读取sd卡 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.BATTERY_STATS" />
@@ -34,6 +27,34 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <!-- 允许应用访问震动器 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- 允许程序打开网络套接字 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许程序设置内置sd卡的写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许程序获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许程序访问WiFi网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许程序读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- 登录分享 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
 
     <application
         android:name=".app.App"
@@ -51,6 +72,12 @@
             </intent-filter>
         </activity>
 
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="0c040b58d6dd30bb62fb0ebe41675582"></meta-data>
+
+        <service android:name="com.amap.api.location.APSService" />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -67,7 +94,8 @@
         <activity android:name=".ui.login.ForgetPwdActivity" />
         <activity android:name=".ui.message.MessageActivity" />
         <activity android:name=".ui.message.MessageTabActivity" />
-        <activity android:name=".ui.person.PersonActivity"></activity>
+        <activity android:name=".ui.person.PersonActivity" />
+        <activity android:name=".ui.home.RecycleFBActivity"/>
     </application>
 
 </manifest>
