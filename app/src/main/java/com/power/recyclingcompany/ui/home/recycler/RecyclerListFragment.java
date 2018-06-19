@@ -1,4 +1,4 @@
-package com.power.recyclingcompany.ui.home;
+package com.power.recyclingcompany.ui.home.recycler;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,8 +26,8 @@ import butterknife.Unbinder;
  * @date 2018/6/11 上午9:57
  * @description: 回收人员列表
  */
-public class RecycleListFragment extends BaseFragment<RecyclerListConstract,RecyclerListPresenter>
-        implements RecyclerListConstract, BaseQuickAdapter.OnItemClickListener {
+public class RecyclerListFragment extends BaseFragment<RecyclerListContract,RecyclerListPresenter>
+        implements RecyclerListContract, BaseQuickAdapter.OnItemClickListener {
 
     @BindView(R.id.search_tv)
     TextView searchTv;

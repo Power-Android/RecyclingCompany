@@ -1,4 +1,4 @@
-package com.power.recyclingcompany.ui.home;
+package com.power.recyclingcompany.ui.home.recycler;
 
 import android.support.annotation.Nullable;
 
@@ -9,12 +9,12 @@ import java.util.List;
 
 /**
  * @author power
- * @date 2018/6/11 下午6:56
+ * @date 2018/6/19 上午10:37
  * @description:
  */
-public class RecyclerListAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
+public class RecyclerRecordAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
 
-    public RecyclerListAdapter(int layoutResId, @Nullable List<String> data) {
+    public RecyclerRecordAdapter(int layoutResId, @Nullable List<String> data) {
         super(layoutResId, data);
     }
 

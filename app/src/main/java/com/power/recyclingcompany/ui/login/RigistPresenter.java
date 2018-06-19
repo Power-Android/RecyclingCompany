@@ -1,5 +1,7 @@
 package com.power.recyclingcompany.ui.login;
 
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.exceptions.HyphenateException;
 import com.power.recyclingcompany.base.BasePresenter;
 
 /**
@@ -13,5 +15,11 @@ public class RigistPresenter extends BasePresenter<RigistContract> {
 
     public void rigist(String userName, String passWord) {
         getView().rigistSuccess();
+        //注册失败会抛出HyphenateException
+//        try {
+//            EMClient.getInstance().createAccount("huishougongsi", "123456");//同步方法
+//        } catch (HyphenateException e) {
+//            e.printStackTrace();
+//        }
     }
 }

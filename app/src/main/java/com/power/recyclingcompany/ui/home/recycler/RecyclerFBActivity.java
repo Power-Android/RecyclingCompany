@@ -1,7 +1,5 @@
-package com.power.recyclingcompany.ui.home;
+package com.power.recyclingcompany.ui.home.recycler;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,8 +8,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,10 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.power.recyclingcompany.R;
-import com.power.recyclingcompany.app.Constant;
 import com.power.recyclingcompany.base.BaseActivity;
 import com.power.recyclingcompany.base.BasePresenter;
-import com.power.recyclingcompany.utils.LogUtils;
 import com.power.recyclingcompany.utils.PermissionUtils;
 
 import java.lang.reflect.Field;
@@ -38,7 +32,7 @@ import butterknife.OnClick;
  * @date 2018-06-11 18:35:26
  * @description: 回收人员分布
  */
-public class RecycleFBActivity extends BaseActivity {
+public class RecyclerFBActivity extends BaseActivity {
 
     @BindView(R.id.title_back_iv)
     ImageView titleBackIv;
@@ -91,10 +85,10 @@ public class RecycleFBActivity extends BaseActivity {
                 Fragment fragment = null;
                 switch (position){
                     case 0:
-                        fragment= new RecycleMapFragment();
+                        fragment= new RecyclerMapFragment();
                         break;
                     case 1:
-                        fragment= new RecycleListFragment();
+                        fragment= new RecyclerListFragment();
                         break;
                 }
                 return fragment;

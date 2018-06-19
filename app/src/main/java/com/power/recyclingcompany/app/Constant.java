@@ -1,6 +1,9 @@
 package com.power.recyclingcompany.app;
 
 import android.support.annotation.IntDef;
+
+import com.hyphenate.easeui.EaseConstant;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 

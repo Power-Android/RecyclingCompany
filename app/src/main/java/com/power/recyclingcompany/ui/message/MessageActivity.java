@@ -11,10 +11,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.hyphenate.chat.EMMessage;
+import com.hyphenate.easeui.EaseConstant;
 import com.power.recyclingcompany.R;
 import com.power.recyclingcompany.app.Constant;
 import com.power.recyclingcompany.base.BaseActivity;
 import com.power.recyclingcompany.bean.EventBean;
+import com.power.recyclingcompany.utils.SPUtils;
 import com.power.recyclingcompany.utils.ToastUtils;
 
 import org.greenrobot.eventbus.EventBus;
@@ -94,7 +97,15 @@ public class MessageActivity extends BaseActivity<MessageContract, MessagePresen
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        ToastUtils.showShort("点击了---item"+position);
+        //设置要发送出去的昵称
+        SPUtils.getInstance().put(Constant.keys.USERNAME,"Power公司端");
+        //设置要发送出去的头像
+        SPUtils.getInstance().put(Constant.keys.FACE,"http://img4q.duitang.com/uploads/item/201506/13/20150613215049_xiHNV.jpeg");
+
+        Intent intent = new Intent(this,ChatPrivateActivity.class);
+        intent.putExtra(EaseConstant.EXTRA_USER_ID,"test02");
+        intent.putExtra(EaseConstant.EXTRA_CHAT_TYPE, EMMessage.ChatType.Chat);
+        startActivity(intent);
     }
 
     @Override

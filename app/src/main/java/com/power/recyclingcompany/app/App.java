@@ -3,6 +3,9 @@ package com.power.recyclingcompany.app;
 import android.app.Application;
 import android.content.Context;
 
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMOptions;
+import com.hyphenate.easeui.EaseUI;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -12,6 +15,8 @@ import com.lzy.okgo.https.HttpsUtils;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
+import com.power.recyclingcompany.widget.HXHelper;
+
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -33,6 +38,13 @@ public class App extends Application {
         setOkGo();//OkGo----第三方网络框架
         //初始化二维码工具类
 //        ZXingLibrary.initDisplayOpinion(this);
+        //初始化环信
+        initEM();
+    }
+
+    private void initEM() {
+        //初始化UI界面
+        HXHelper.getInstance().init(this);
     }
 
     @Override

@@ -9,4 +9,5 @@ import com.power.recyclingcompany.base.BaseContract;
  */
 public interface RigistContract extends BaseContract {
     void rigistSuccess();
+
 }

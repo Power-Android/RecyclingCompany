@@ -8,7 +8,10 @@ import android.widget.TextView;
 
 import com.power.recyclingcompany.R;
 import com.power.recyclingcompany.base.BaseActivity;
-import com.power.recyclingcompany.ui.home.RecycleFBActivity;
+import com.power.recyclingcompany.ui.home.driver.DriverFBActivity;
+import com.power.recyclingcompany.ui.home.recycler.RecyclerFBActivity;
+import com.power.recyclingcompany.ui.home.recycler.RecyclerApplyActivity;
+import com.power.recyclingcompany.ui.home.recycler.RecyclerInvitationAcitivity;
 import com.power.recyclingcompany.ui.message.MessageActivity;
 import com.power.recyclingcompany.ui.person.PersonActivity;
 
@@ -77,14 +80,17 @@ public class MainActivity extends BaseActivity<MainContract, MainPresenter> impl
             case R.id.title_person_iv://我的
                 startActivity(new Intent(this,PersonActivity.class));
                 break;
-            case R.id.hsryfb_tv:
-                startActivity(new Intent(this,RecycleFBActivity.class));
+            case R.id.hsryfb_tv://回收人员分布
+                startActivity(new Intent(this,RecyclerFBActivity.class));
                 break;
-            case R.id.hsrysq_tv:
+            case R.id.hsrysq_tv://回收人员申请
+                startActivity(new Intent(this, RecyclerApplyActivity.class));
                 break;
-            case R.id.yqhsry_tv:
+            case R.id.yqhsry_tv://邀请回收人员
+                startActivity(new Intent(this,RecyclerInvitationAcitivity.class));
                 break;
-            case R.id.sjryfb_tv:
+            case R.id.sjryfb_tv://司机人员分布
+                startActivity(new Intent(this,DriverFBActivity.class));
                 break;
             case R.id.sjrysq_tv:
                 break;
