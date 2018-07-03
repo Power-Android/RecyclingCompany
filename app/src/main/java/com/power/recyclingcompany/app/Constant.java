@@ -3,6 +3,7 @@ package com.power.recyclingcompany.app;
 import android.support.annotation.IntDef;
 
 import com.hyphenate.easeui.EaseConstant;
+import com.power.recyclingcompany.utils.PermissionUtils;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -23,6 +24,16 @@ public class Constant {
      * @description: 地图权限code
      */
     public static final int REQUEST_CODE_LOCATION = 101;
+
+    /**
+     * @description: 类别价格requestcode
+     */
+    public static final int REQUEST_CODE_CATEGORY = 102;
+
+    /**
+     * @description: 类别价格resulcode
+     */
+    public static final int RESULT_CODE_CATEGORY = 103;
 
     /**
      * @description: 全局URL常量

@@ -2,6 +2,7 @@ package com.power.recyclingcompany.ui.home.driver;
 
 import android.Manifest;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -179,6 +180,12 @@ public class DriverFBActivity extends BaseActivity<DriverFBContract, DriverFBPre
                         + aMapLocation.getErrorInfo());
             }
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PermissionUtils.onRequestPermissionsResult(this,requestCode, permissions,grantResults);
     }
 
     @Override

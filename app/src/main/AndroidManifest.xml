@@ -141,13 +141,39 @@
         <activity android:name=".ui.login.ForgetPwdActivity" />
         <activity android:name=".ui.message.MessageActivity" />
         <activity android:name=".ui.message.MessageTabActivity" />
-        <activity android:name=".ui.person.PersonActivity" />
+        <activity android:name=".ui.person.PersonCenterActivity" />
         <activity android:name=".ui.home.recycler.RecyclerFBActivity" />
         <activity android:name=".ui.message.ChatPrivateActivity" />
         <activity android:name=".ui.home.recycler.RecyclerApplyActivity" />
         <activity android:name=".ui.home.recycler.RecyclerInvitationAcitivity" />
         <activity android:name=".ui.home.recycler.RecyclerRecordActivity" />
-        <activity android:name=".ui.home.driver.DriverFBActivity"></activity>
+        <activity android:name=".ui.home.driver.DriverFBActivity" />
+        <activity android:name=".ui.home.driver.DriverApplyActivity" />
+        <activity android:name=".ui.home.driver.DriverInvitationActivity" />
+        <activity android:name=".ui.home.driver.DriverRecordActivity" />
+        <activity android:name=".ui.home.order.OrderClearingActivity" />
+        <activity android:name=".ui.home.packager.PackageInActivity" />
+        <activity android:name=".ui.home.packager.PackageOutActivity" />
+        <activity android:name=".ui.home.packager.BatchInActivity" />
+        <activity android:name=".ui.home.packager.SingleInActivity" />
+        <activity android:name=".ui.home.packager.BatchOutActivity" />
+        <activity android:name=".ui.home.packager.SingleOutActivity" />
+        <activity android:name=".ui.person.PersonInfoActivity" />
+        <activity android:name=".ui.person.RecyclerCategoryActivity" />
+        <activity android:name=".ui.person.CategoryPriceFormActivity" />
+        <activity android:name=".ui.person.OpinionActivity" />
+        <activity android:name=".ui.person.MyBankCardActivity" />
+        <activity android:name=".ui.person.HelpCenterActivity" />
+        <activity android:name=".ui.person.AboutUsActivity" />
+        <activity android:name=".ui.person.SettingActivity" />
+        <activity
+            android:name=".ui.person.CategoryPriceEditActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".ui.person.BindCardActivity" />
+        <activity android:name=".ui.person.UnBindCardActivity" />
+        <activity android:name=".ui.person.PayPWDActivity" />
+        <activity android:name=".ui.person.PayPWDEndActivity" />
+        <activity android:name=".ui.person.EditPassWordActivity"></activity>
     </application>
 
 </manifest>

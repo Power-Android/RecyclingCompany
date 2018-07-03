@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.power.recyclingcompany.ui.person.PayPWDEndActivity">
+    <include layout="@layout/item_title_layout"/>
+    <com.tuo.customview.VerificationCodeView
+        android:id="@+id/verify_codeview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="50dp"
+        app:icv_et_bg_focus="@drawable/bg_pwd"
+        app:icv_et_bg_normal="@drawable/bg_pwd"
+        app:icv_et_divider_drawable="@drawable/shape_divider_identifying"
+        app:icv_et_number="6"
+        app:icv_et_pwd="true"
+        app:icv_et_pwd_radius="10dp"
+        app:icv_et_text_color="@color/textcolor"
+        app:icv_et_width="50dp" />
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+        <com.power.recyclingcompany.view.CircleImageView
+            android:id="@+id/item_img_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test_02" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
+            <CheckBox
+                android:id="@+id/item_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/checkbox_celector"
+                android:button="@null"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/item_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="衣服"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="5dp"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

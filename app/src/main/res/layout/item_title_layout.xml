@@ -49,4 +49,24 @@
         android:layout_centerVertical="true"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"/>
+    <ImageView
+        android:id="@+id/title_more_iv"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/title_more_iv"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"/>
+    <ImageView
+        android:id="@+id/title_code_iv"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/title_code_iv"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"/>
 </RelativeLayout>

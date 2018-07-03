@@ -7,5 +7,5 @@ import com.power.recyclingcompany.base.BaseContract;
  * @date 2018/6/8 上午10:29
  * @description:
  */
-public interface PersonContract extends BaseContract {
+public interface PersonCenterContract extends BaseContract {
 }

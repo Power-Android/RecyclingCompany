@@ -8,12 +8,17 @@ import android.widget.TextView;
 
 import com.power.recyclingcompany.R;
 import com.power.recyclingcompany.base.BaseActivity;
+import com.power.recyclingcompany.ui.home.driver.DriverApplyActivity;
 import com.power.recyclingcompany.ui.home.driver.DriverFBActivity;
+import com.power.recyclingcompany.ui.home.driver.DriverInvitationActivity;
+import com.power.recyclingcompany.ui.home.order.OrderClearingActivity;
+import com.power.recyclingcompany.ui.home.packager.PackageInActivity;
+import com.power.recyclingcompany.ui.home.packager.PackageOutActivity;
 import com.power.recyclingcompany.ui.home.recycler.RecyclerFBActivity;
 import com.power.recyclingcompany.ui.home.recycler.RecyclerApplyActivity;
 import com.power.recyclingcompany.ui.home.recycler.RecyclerInvitationAcitivity;
 import com.power.recyclingcompany.ui.message.MessageActivity;
-import com.power.recyclingcompany.ui.person.PersonActivity;
+import com.power.recyclingcompany.ui.person.PersonCenterActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -75,32 +80,37 @@ public class MainActivity extends BaseActivity<MainContract, MainPresenter> impl
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.title_message_iv://消息
-                startActivity(new Intent(this,MessageActivity.class));
+                startActivity(new Intent(this, MessageActivity.class));
                 break;
             case R.id.title_person_iv://我的
-                startActivity(new Intent(this,PersonActivity.class));
+                startActivity(new Intent(this, PersonCenterActivity.class));
                 break;
             case R.id.hsryfb_tv://回收人员分布
-                startActivity(new Intent(this,RecyclerFBActivity.class));
+                startActivity(new Intent(this, RecyclerFBActivity.class));
                 break;
             case R.id.hsrysq_tv://回收人员申请
                 startActivity(new Intent(this, RecyclerApplyActivity.class));
                 break;
             case R.id.yqhsry_tv://邀请回收人员
-                startActivity(new Intent(this,RecyclerInvitationAcitivity.class));
+                startActivity(new Intent(this, RecyclerInvitationAcitivity.class));
                 break;
             case R.id.sjryfb_tv://司机人员分布
-                startActivity(new Intent(this,DriverFBActivity.class));
+                startActivity(new Intent(this, DriverFBActivity.class));
                 break;
-            case R.id.sjrysq_tv:
+            case R.id.sjrysq_tv://司机人员申请
+                startActivity(new Intent(this, DriverApplyActivity.class));
                 break;
-            case R.id.yqsjjr_tv:
+            case R.id.yqsjjr_tv://邀请司机加入
+                startActivity(new Intent(this, DriverInvitationActivity.class));
                 break;
-            case R.id.ddjs_tv:
+            case R.id.ddjs_tv://订单结算
+                startActivity(new Intent(this, OrderClearingActivity.class));
                 break;
-            case R.id.bzdrk_tv:
+            case R.id.bzdrk_tv://包装袋入库
+                startActivity(new Intent(this, PackageInActivity.class));
                 break;
-            case R.id.bzdck_tv:
+            case R.id.bzdck_tv://包装袋出库
+                startActivity(new Intent(this, PackageOutActivity.class));
                 break;
         }
     }
