@@ -98,7 +98,8 @@ public class BindCardActivity extends BaseActivity<BindCardContrat, BindCardPres
         RecyclerView recyclerView = mDialog.getView(R.id.recyclerView);
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //TODO 设置Adapter未完成
+        BindCardAdapter bindCardAdapter = new BindCardAdapter(R.layout.item_bind_card_layout,list);
+        recyclerView.setAdapter(bindCardAdapter);
         mDialog.show();
     }
 }

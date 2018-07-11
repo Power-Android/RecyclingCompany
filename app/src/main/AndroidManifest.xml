@@ -177,7 +177,13 @@
         <activity android:name=".ui.person.PayPWDEndActivity" />
         <activity android:name=".ui.person.EditPassWordActivity" />
         <activity android:name=".ui.home.recycler.RecyclerDetailActivity" />
-        <activity android:name=".ui.home.recycler.RecyclerOrderActivity"></activity>
+        <activity android:name=".ui.home.recycler.RecyclerOrderActivity" />
+        <activity android:name=".ui.home.recycler.OrderDQHActivity" />
+        <activity android:name=".ui.home.recycler.OrderDJDActivity" />
+        <activity android:name=".ui.home.recycler.OrderPSZActivity" />
+        <activity android:name=".ui.home.recycler.OrderYWCActivity" />
+        <activity android:name=".ui.person.HelpDetailActivity" />
+        <activity android:name=".ui.person.PayPWDStartActivity"></activity>
     </application>
 
 </manifest>

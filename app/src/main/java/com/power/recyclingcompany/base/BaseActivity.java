@@ -143,17 +143,6 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
                 }
             }
             activityList.clear();
-        }
-    }
-
-    public static void realBack() {
-        if (activityList != null && activityList.size() > 0) {
-            for (int i = 0; i < activityList.size(); i++) {
-                if (activityList.get(i) != null) {
-                    activityList.get(i).finish();
-                }
-            }
-            activityList.clear();
             activityList = null;
         }
     }

@@ -1,5 +1,6 @@
 package com.power.recyclingcompany.ui.person;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -10,6 +11,7 @@ import com.bumptech.glide.Glide;
 import com.power.recyclingcompany.R;
 import com.power.recyclingcompany.base.BaseActivity;
 import com.power.recyclingcompany.base.BasePresenter;
+import com.power.recyclingcompany.ui.login.LoginActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,6 +59,8 @@ public class EditPassWordActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.edit_tv:
+                removeAllActivitys();
+                startActivity(new Intent(this, LoginActivity.class));
                 break;
         }
     }

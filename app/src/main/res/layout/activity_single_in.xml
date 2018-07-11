@@ -31,6 +31,8 @@
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/code_iv"
             android:textSize="16sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="15dp"/>
         <ImageView
@@ -38,6 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/title_saoma_iv"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
     </RelativeLayout>
 </LinearLayout>

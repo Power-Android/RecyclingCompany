@@ -1,5 +1,6 @@
 package com.power.recyclingcompany.ui.person;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.power.recyclingcompany.R;
 import com.power.recyclingcompany.base.BaseActivity;
 
@@ -62,5 +64,11 @@ public class HelpCenterActivity extends BaseActivity<HelpCenterContract, HelpCen
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         HelpCenterAdapter helpCenterAdapter = new HelpCenterAdapter(R.layout.item_help_center_layout,list);
         recyclerView.setAdapter(helpCenterAdapter);
+        helpCenterAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                startActivity(new Intent(HelpCenterActivity.this,HelpDetailActivity.class));
+            }
+        });
     }
 }
