@@ -1,20 +1,28 @@
 package com.power.recyclingcompany.ui.person;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.power.recyclingcompany.R;
 import com.power.recyclingcompany.base.BaseActivity;
+import com.power.recyclingcompany.widget.BaseDialog;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class BindCardActivity extends BaseActivity<BindCardContrat, BindCardPresenter> {
+public class BindCardActivity extends BaseActivity<BindCardContrat, BindCardPresenter>
+        implements BindCardContrat{
 
     @BindView(R.id.title_back_iv)
     ImageView titleBackIv;
@@ -30,6 +38,8 @@ public class BindCardActivity extends BaseActivity<BindCardContrat, BindCardPres
     RelativeLayout bankRl;
     @BindView(R.id.bind_tv)
     TextView bindTv;
+    private BaseDialog mDialog;
+    private BaseDialog.Builder mBuilder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +66,39 @@ public class BindCardActivity extends BaseActivity<BindCardContrat, BindCardPres
                 finish();
                 break;
             case R.id.bank_rl:
+                mPresenter.getData();
                 break;
             case R.id.bind_tv:
                 finish();
                 break;
         }
+    }
+
+    @Override
+    public void dataSuccess(List<String> list) {
+        showCardDialog(list);
+    }
+
+    private void showCardDialog(List<String> list) {
+        mBuilder = new BaseDialog.Builder(this);
+        mDialog = mBuilder.setViewId(R.layout.dialog_order_card)
+                //设置dialogpadding
+                .setPaddingdp(0, 0, 0, 0)
+                //设置显示位置
+                .setGravity(Gravity.BOTTOM)
+                //设置动画
+                .setAnimation(R.style.bottom_aniamtion)
+                //设置dialog的宽高
+                .setWidthHeightpx(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                //设置触摸dialog外围是否关闭
+                .isOnTouchCanceled(true)
+                //设置监听事件
+                .builder();
+        mDialog.setCancelable(true);
+        RecyclerView recyclerView = mDialog.getView(R.id.recyclerView);
+        recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //TODO 设置Adapter未完成
+        mDialog.show();
     }
 }

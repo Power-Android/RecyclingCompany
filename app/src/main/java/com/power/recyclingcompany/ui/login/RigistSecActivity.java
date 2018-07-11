@@ -86,9 +86,40 @@ public class RigistSecActivity extends BaseActivity<RigistSecContract, RigistSec
                 showCameraDialog();
                 break;
             case R.id.tv_commit:
-                mPresenter.commit();
+                showSuccessDialog();
                 break;
         }
+    }
+
+    private void showSuccessDialog() {
+        mBuilder = new BaseDialog.Builder(this);
+        mDialog = mBuilder.setViewId(R.layout.dialog_success_center)
+                //设置dialogpadding
+                .setPaddingdp(0, 0, 0, 0)
+                //设置显示位置
+                .setGravity(Gravity.CENTER)
+                //设置动画
+                .setAnimation(R.style.nomal_aniamtion)
+                //设置dialog的宽高
+                .setWidthHeightpx(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                //设置触摸dialog外围是否关闭
+                .isOnTouchCanceled(false)
+                //设置监听事件
+                .builder();
+        mDialog.setCancelable(false);
+
+        TextView contentTv = mDialog.getView(R.id.item_content_tv);
+        contentTv.setText("资料提交成功，请等待审核");
+
+        mDialog.show();
+
+        mDialog.getView(R.id.item_query_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPresenter.commit();
+                mDialog.dismiss();
+            }
+        });
     }
 
     private void showCameraDialog() {
@@ -212,5 +243,6 @@ public class RigistSecActivity extends BaseActivity<RigistSecContract, RigistSec
     @Override
     public void commitSuccess() {
         startActivity(new Intent(this,LoginActivity.class));
+        finish();
     }
 }

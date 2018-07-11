@@ -1,6 +1,7 @@
 package com.power.recyclingcompany.ui.home.recycler;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import com.amap.api.maps2d.CameraUpdateFactory;
 import com.amap.api.maps2d.MapView;
 import com.amap.api.maps2d.model.BitmapDescriptorFactory;
 import com.amap.api.maps2d.model.LatLng;
+import com.amap.api.maps2d.model.Marker;
 import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.maps2d.model.MyLocationStyle;
 import com.power.recyclingcompany.R;
@@ -144,12 +146,22 @@ public class RecyclerMapFragment extends BaseFragment<RecyclerMapContract,Recycl
             final LatLngBean latLngBean = latLngBeanList.get(i);
             MarkerOptions markerOption = new MarkerOptions();
             markerOption.position(new LatLng(latLngBean.getLatitude(), latLngBean.getLongitude()))
-                    .title(i + "")
+//                    .title(i + "")
+                    .period(i)
                     .draggable(false);//设置Marker可拖动
             View view = LayoutInflater.from(mContext).inflate(R.layout.view_renyuan,null);
             markerOption.icon(BitmapDescriptorFactory.fromView(view));
             aMap.addMarker(markerOption);
         }
+
+        aMap.setOnMarkerClickListener(new AMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                int id = marker.getPeriod();
+                startActivity(new Intent(mContext,RecyclerDetailActivity.class));
+                return true;
+            }
+        });
     }
 
     @OnClick({R.id.dingwei_iv, R.id.jia_iv, R.id.jian_iv})

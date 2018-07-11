@@ -22,7 +22,7 @@ import butterknife.OnClick;
  * @date 2018-06-27 14:52:45
  * @description: 批量出库页面
  */
-public class BatchOutActivity extends BaseActivity<BatchOutContract, BatchOutPresenter> implements BatchInContract{
+public class BatchOutActivity extends BaseActivity<BatchOutContract, BatchOutPresenter> implements BatchOutContract{
 
     @BindView(R.id.title_back_iv)
     ImageView titleBackIv;
@@ -42,6 +42,7 @@ public class BatchOutActivity extends BaseActivity<BatchOutContract, BatchOutPre
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_batch_out);
         ButterKnife.bind(this);
+        initView();
     }
 
     private void initView() {

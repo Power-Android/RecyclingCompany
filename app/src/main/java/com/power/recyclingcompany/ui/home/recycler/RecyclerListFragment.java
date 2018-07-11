@@ -1,5 +1,6 @@
 package com.power.recyclingcompany.ui.home.recycler;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -81,6 +82,6 @@ public class RecyclerListFragment extends BaseFragment<RecyclerListContract,Recy
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-
+        startActivity(new Intent(mContext,RecyclerDetailActivity.class));
     }
 }

@@ -36,6 +36,11 @@ public class Constant {
     public static final int RESULT_CODE_CATEGORY = 103;
 
     /**
+     * @description: 打电话权限code
+     */
+    public static final int REQUEST_CODE_CALLPHONE = 104;
+
+    /**
      * @description: 全局URL常量
      */
     public class Urls {

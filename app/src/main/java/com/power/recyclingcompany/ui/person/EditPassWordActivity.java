@@ -6,6 +6,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.power.recyclingcompany.R;
 import com.power.recyclingcompany.base.BaseActivity;
 import com.power.recyclingcompany.base.BasePresenter;
@@ -40,6 +41,8 @@ public class EditPassWordActivity extends BaseActivity {
     private void initView() {
         titleBackIv.setVisibility(View.VISIBLE);
         titleContentTv.setText("修改密码");
+
+
     }
 
     @Override

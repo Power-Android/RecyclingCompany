@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="17611226688"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="5dp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="衣服、金属"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="5dp"/>
         </LinearLayout>
     </LinearLayout>
     <TextView

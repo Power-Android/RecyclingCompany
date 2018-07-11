@@ -53,6 +53,12 @@
                 android:hint="请设置6-16位数字加字母的登录密码"
                 android:textColor="@color/textcolorgray"
                 android:textSize="16sp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/layout_bg"/>
             <EditText
                 android:id="@+id/et_again"
                 android:layout_width="match_parent"
@@ -75,7 +81,7 @@
         android:textSize="16sp"
         android:gravity="center"
         android:background="@drawable/bg_green_button"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="50dp"/>
 </LinearLayout>

@@ -71,7 +71,7 @@
             android:text="立即注册"
             android:textColor="@color/colorPrimary"
             android:layout_toRightOf="@+id/view_01"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="5dp"/>
         <TextView
             android:id="@+id/tv_forget"
             android:layout_width="wrap_content"
@@ -89,7 +89,7 @@
         android:textSize="16sp"
         android:gravity="center"
         android:background="@drawable/bg_green_button"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="50dp"/>
 </LinearLayout>

@@ -39,6 +39,7 @@ public class SingleInActivity extends BaseActivity {
         titleBackIv.setVisibility(View.VISIBLE);
         titleContentTv.setText("单品入库");
         titleRightTv.setVisibility(View.VISIBLE);
+        titleRightTv.setText("确认入库");
     }
 
     @Override
@@ -53,6 +54,7 @@ public class SingleInActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.title_right_tv:
+                finish();
                 break;
             case R.id.code_iv:
                 break;

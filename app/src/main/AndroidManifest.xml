@@ -156,7 +156,9 @@
         <activity android:name=".ui.home.packager.PackageOutActivity" />
         <activity android:name=".ui.home.packager.BatchInActivity" />
         <activity android:name=".ui.home.packager.SingleInActivity" />
-        <activity android:name=".ui.home.packager.BatchOutActivity" />
+        <activity
+            android:name=".ui.home.packager.BatchOutActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity android:name=".ui.home.packager.SingleOutActivity" />
         <activity android:name=".ui.person.PersonInfoActivity" />
         <activity android:name=".ui.person.RecyclerCategoryActivity" />
@@ -173,7 +175,9 @@
         <activity android:name=".ui.person.UnBindCardActivity" />
         <activity android:name=".ui.person.PayPWDActivity" />
         <activity android:name=".ui.person.PayPWDEndActivity" />
-        <activity android:name=".ui.person.EditPassWordActivity"></activity>
+        <activity android:name=".ui.person.EditPassWordActivity" />
+        <activity android:name=".ui.home.recycler.RecyclerDetailActivity" />
+        <activity android:name=".ui.home.recycler.RecyclerOrderActivity"></activity>
     </application>
 
 </manifest>

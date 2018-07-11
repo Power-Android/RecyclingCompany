@@ -80,5 +80,6 @@ public class RigistActivity extends BaseActivity<RigistContract, RigistPresenter
     @Override
     public void rigistSuccess() {
         startActivity(new Intent(this,RigistSecActivity.class));
+        finish();
     }
 }
